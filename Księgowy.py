@@ -22,6 +22,8 @@ while True:
     elif argument == "zakup":
         indentyfikator = str(input())
         cena = int(input())
+
+
         liczba = int(input())
         if wartosc_saldo < cena*liczba:
             print("\nblad - saldo ujemne\n)")
@@ -49,11 +51,12 @@ while True:
     elif argument == "stop":
         #operacje.append(argument)
         break
+print(sys.argv)
 if len(sys.argv) > 1:
     argument = sys.argv[1]
     if argument == "saldo":
         if len(sys.argv) < 4:
-            print("Bledna ilosc argumentow dla operacji saldo, powinno byc: saldo wartosc komentarz")
+            print("Bledna ilosc argumentow dla operacji saldo,"" powinno byc: saldo wartosc komentarz")
             exit()
         operacje.append(argument)
         if wartosc_saldo:
@@ -65,7 +68,7 @@ if len(sys.argv) > 1:
         operacje.append(komentarz)
     elif argument == "zakup":
         if len(sys.argv) < 5:
-            print("Bledna ilosc argumentow dla operacji zakup, powinno byc: zakup nazwa_towaru cena ilosc")
+            print("Bledna ilosc argumentow dla operacji zakup,"" powinno byc: zakup nazwa_towaru cena ilosc")
             exit()
         indentyfikator = sys.argv[2]
         cena = int(sys.argv[3])
@@ -81,13 +84,14 @@ if len(sys.argv) > 1:
         wartosc_saldo = wartosc_saldo - (cena*liczba)
     elif argument == "sprzedaż":
         if len(sys.argv) < 5:
-            print("Bledna ilosc argumentow dla operacji sprzedaż, powinno byc: sprzedaż nazwa_towaru cena ilosc")
+            print("Bledna ilosc argumentow dla operacji sprzedaż,"" powinno byc: sprzedaż nazwa_towaru cena ilosc")
             exit()
         indentyfikator = sys.argv[2]
         cena = int(sys.argv[3])
         liczba = int(sys.argv[4])
         if towary[indentyfikator] < liczba:
-            print(f"\nstan towaru {indentyfikator} jest mniejszy od {liczba} \n")
+            print(f"\nstan towaru {indentyfikator}"
+                  f" jest mniejszy od {liczba} \n")
             exit()
         operacje.append(argument)
         operacje.append(indentyfikator)
@@ -107,7 +111,10 @@ if len(sys.argv) > 1:
         exit()
     elif argument == "przegląd":
         # ??
+        print(operacje[0:5])
         exit()
 operacje.append("stop")
 for i in operacje:
     print (i)
+tekst = "aaaa"
+tekst.upper()

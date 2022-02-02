@@ -29,5 +29,5 @@ raspberry
 5
 sprzedaz
 raspberry
-zus
+
 5
